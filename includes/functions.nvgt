@@ -8,5 +8,6 @@ else
 {
 gui.create_button("check repo status");
 }
+gui.add_exit_button("exit");
 gui.create_screen("home");
 }

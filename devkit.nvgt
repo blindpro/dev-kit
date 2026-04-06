@@ -1,3 +1,4 @@
+#include"includes/functions.nvgt"
 #include"includes/project.nvgt"
 #include"includes/window_gui.nvgt"
 #include"includes/stuff.nvgt"
@@ -8,8 +9,10 @@ window_gui gui;
 void main()
 {
 gui.setup_window("dev kit");
+setup();
 while(true)
 {
 wait(5);
+gui.run();
 }
 }
