@@ -6,8 +6,12 @@ gui.create_button("create git rapozatory");
 }
 else
 {
-gui.create_button("check repo status");
+gui.create_button("check repo status",speak_status);
 }
 gui.add_exit_button("exit");
 gui.create_screen("home");
+}
+void speak_status()
+{
+speak(g.get_status());
 }
