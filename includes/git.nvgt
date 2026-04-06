@@ -1,0 +1,8 @@
+class git
+{
+string get_status()
+{
+cmd.send("git status");
+return cmd.read_wait(500);
+}
+}
