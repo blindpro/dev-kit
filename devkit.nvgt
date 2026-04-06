@@ -1,0 +1,13 @@
+#include"includes/window_gui.nvgt"
+#include"includes/stuff.nvgt"
+#include"includes/shell_process.nvgt"
+shell_process cmd("cmd.exe");
+window_gui gui;
+void main()
+{
+gui.setup_window("dev kit");
+while(true)
+{
+wait(5);
+}
+}

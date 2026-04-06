@@ -4,12 +4,12 @@ tts_voice voice;
 //sound pool object for the sound functions later in the code.
 sound_pool sounds;
 //This function is to speak some text. Not needed and must be commented out if audio form is being used.
-
+/*
 void speak(string text, bool interupt = true)
 {
 screen_reader_speak(text, interupt);
 }
-
+*/
 //This function plays a sound at a given pazition.
 void play(string name, int pazition, int spazition, bool loop)
 {
