@@ -1,0 +1,20 @@
+class project
+{
+string name;
+string language;
+bool has_repo;
+bool has_git;
+string compiler;
+void detect_repo()
+{
+if(directory_exists(".git"))
+{
+has_repo = true;
+}
+else
+{
+has_repo = false;
+}
+}
+
+}
