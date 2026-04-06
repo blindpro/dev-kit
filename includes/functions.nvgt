@@ -1,0 +1,12 @@
+void setup()
+{
+if(p.has_repo == false)
+{
+gui.create_button("create git rapozatory");
+}
+else
+{
+gui.create_button("check repo status");
+}
+gui.create_screen("home");
+}
