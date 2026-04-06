@@ -1,0 +1,8 @@
+*.exe
+*.ogg
+*.vscode/
+*.ini
+*.dat
+*.pk
+pack_creator.nvgt
+Makefile
