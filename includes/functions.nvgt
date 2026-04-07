@@ -15,3 +15,7 @@ void speak_status()
 {
 speak(g.get_status());
 }
+void commit()
+{
+speak(g.commit());
+}

@@ -5,4 +5,9 @@ string get_status()
 cmd.send("git status");
 return cmd.read_wait(500);
 }
+string commit()
+{
+cmd.send("git commit");
+return cmd.read_wait(500);
+}
 }
