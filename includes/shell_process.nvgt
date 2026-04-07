@@ -24,7 +24,7 @@ if(!active)
 {
 return "";
 }
-return pipe.read_stdout();
+return pipe.read_stdout(4096);
 }
 string read_wait(int ms)
 {

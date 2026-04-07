@@ -8,9 +8,9 @@ shell_process cmd("cmd.exe");
 project p;
 window_gui gui;
 git g;
-cmd.read();
 void main()
 {
+cmd.read();
 gui.setup_window("dev kit");
 setup();
 while(true)

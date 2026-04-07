@@ -7,6 +7,7 @@ gui.create_button("create git rapozatory");
 else
 {
 gui.create_button("check repo status",speak_status);
+gui.create_button("commit to repo",commit);
 }
 gui.add_exit_button("exit");
 gui.create_screen("home");
