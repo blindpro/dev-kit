@@ -2,12 +2,10 @@ class git
 {
 string get_status()
 {
-cmd.send("git status");
-return cmd.read_wait(500);
+return shell.send_wait("git status");
 }
 string commit()
 {
-cmd.send("git commit");
-return cmd.read_wait(500);
+return shell.send_wait("git commit");
 }
 }

@@ -1,16 +1,10 @@
-#include"includes/git.nvgt"
-#include"includes/functions.nvgt"
-#include"includes/project.nvgt"
-#include"includes/window_gui.nvgt"
-#include"includes/stuff.nvgt"
-#include"includes/shell_process.nvgt"
-shell_process cmd("cmd.exe");
+#include"includes/*.nvgt"
+cmd shell;
 project p;
 window_gui gui;
 git g;
 void main()
 {
-cmd.read();
 gui.setup_window("dev kit");
 setup();
 while(true)
