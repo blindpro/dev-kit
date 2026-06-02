@@ -17,21 +17,3 @@ gui.create_button("commit to repo",commit);
 gui.add_exit_button("exit");
 gui.create_screen("git");
 }
-void speak_status()
-{
-speak(g.get_status());
-}
-void commit()
-{
-speak(g.commit());
-}
-void load_home()
-{
-gui.load_screen("home");
-speak("home screen");
-}
-void load_git()
-{
-gui.load_screen("git");
-speak("git management screen");
-}
