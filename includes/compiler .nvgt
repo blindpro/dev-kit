@@ -21,4 +21,12 @@ build_command = "g++ -o output "+main_script;
 run_command = "output.exe";
 }
 }
+string build()
+{
+return shell.send_wait(build_command);
+}
+string run()
+{
+return shell.send_wait(run_command);
+}
 }

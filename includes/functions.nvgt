@@ -37,6 +37,8 @@ void build_project_screen()
 {
 gui.create_button("home",load_home);
 gui.create_button("view project info",on_view_project_info);
+gui.create_button("build project",on_build);
+gui.create_button("run project",on_run);
 gui.add_exit_button("exit");
 gui.create_screen("project");
 gui.clear_all_controls();
