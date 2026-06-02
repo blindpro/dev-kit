@@ -3,6 +3,7 @@ void setup()
 build_home_screen();
 build_git_screen();
 build_project_screen();
+build_branch_screen();
 }
 void build_home_screen()
 {
@@ -28,6 +29,7 @@ if(g.has_remotes())
 {
 gui.create_button("push to remote",on_push);
 }
+gui.create_button("manage branches",load_branch);
 }
 gui.add_exit_button("exit");
 gui.create_screen("git");
@@ -41,5 +43,15 @@ gui.create_button("build project",on_build);
 gui.create_button("run project",on_run);
 gui.add_exit_button("exit");
 gui.create_screen("project");
+gui.clear_all_controls();
+}
+void build_branch_screen()
+{
+gui.create_button("home",load_home);
+gui.create_list("branches");
+gui.create_button("switch branch",on_switch_branch);
+gui.create_button("merge branch",on_merge_branch);
+gui.add_exit_button("exit");
+gui.create_screen("branch management");
 gui.clear_all_controls();
 }

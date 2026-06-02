@@ -22,6 +22,22 @@ void on_push()
 speak("pushing to remote...");
 speak(g.push());
 }
+void on_switch_branch()
+{
+string[] branches = g.get_branches();
+int pos = gui.get_list_pazition("branches");
+string branch = branches[pos];
+speak("switching to branch "+branch+"...");
+speak(g.switch_branch(branch));
+load_branch();
+}
+void on_merge_branch()
+{
+string[] branches = g.get_branches();
+string branch = branch[gui.get_list_pazition("branches")];
+speak("merging branch "+branch+"...");
+speak(g.merge_branch(branch));
+}
 void load_home()
 {
 gui.load_screen("home");
@@ -31,6 +47,17 @@ void load_git()
 {
 gui.load_screen("git");
 speak("git management screen");
+}
+void load_branch()
+{
+speak("branch management screen");
+gui.load_screen("branch management");
+gui.clear_list("branches");
+string[] branches = g.get_branches();
+for(int i = 0; i<branches.length(); i++)
+{
+gui.add_list_item("branches",branches[i]);
+}
 }
 void load_project()
 {

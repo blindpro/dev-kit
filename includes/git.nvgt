@@ -8,9 +8,9 @@ string get_status()
 {
 return shell.send_wait("git status");
 }
-void stage_all()
+string stage_all()
 {
-shell.send("git add .");
+return shell.send_wait("git add .");
 }
 string commit()
 {
@@ -24,5 +24,18 @@ return remotes != "";
 string push()
 {
 return shell.send_wait("git push");
+}
+string[] get_branches()
+{
+string branches = shell.send_wait("git branch");
+return branches.split("\n");
+}
+string switch_branch(string branch)
+{
+return shell.send_wait("git switch "+branch);
+}
+string merge_branch(string branch)
+{
+return shell.send_wait("git merge "+branch);
 }
 }
