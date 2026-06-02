@@ -16,4 +16,13 @@ string commit()
 {
 return shell.send_wait("git commit");
 }
+bool has_remotes()
+{
+string remotes = shell.send_wait("git remote");
+return remotes != "";
+}
+string push()
+{
+return shell.send_wait("git push");
+}
 }
