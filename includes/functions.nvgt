@@ -1,5 +1,10 @@
 void setup()
 {
+gui.create_button("git management",load_git);
+gui.add_exit_button("exit");
+gui.create_screen("home");
+gui.clear_all_controls();
+gui.create_button("home",load_home);
 if(p.has_repo == false)
 {
 gui.create_button("create git rapozatory");
@@ -10,7 +15,7 @@ gui.create_button("check repo status",speak_status);
 gui.create_button("commit to repo",commit);
 }
 gui.add_exit_button("exit");
-gui.create_screen("home");
+gui.create_screen("git");
 }
 void speak_status()
 {
@@ -19,4 +24,14 @@ speak(g.get_status());
 void commit()
 {
 speak(g.commit());
+}
+void load_home()
+{
+gui.load_screen("home");
+speak("home screen");
+}
+void load_git()
+{
+gui.load_screen("git");
+speak("git management screen");
 }

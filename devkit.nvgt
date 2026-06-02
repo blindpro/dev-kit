@@ -7,6 +7,7 @@ void main()
 {
 gui.setup_window("dev kit");
 setup();
+gui.load_screen("home");
 while(true)
 {
 wait(5);
