@@ -15,6 +15,7 @@ config.load("project.ini");
 name = config.get_string("genral","name");
 language = config.get_string("genral","language");
 }
+detect_compiler();
 }
 int build_config()
 {
@@ -32,6 +33,13 @@ language = input_box("enter language","Enter the programming language of the pro
 config.set_string("genral","language",language);
 config.save("project.ini");
 return 1;
+}
+void detect_compiler()
+{
+if(language == "nvgt" or language == "NVGT")
+{
+compiler = "nvgt";
+}
 }
 void refresh()
 {
