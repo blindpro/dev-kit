@@ -36,9 +36,14 @@ return 1;
 }
 void detect_compiler()
 {
-if(language == "nvgt" or language == "NVGT")
+language = language.lower();
+if(language == "nvgt")
 {
 compiler = "nvgt";
+}
+else if(language == "c++" or language == "cpp")
+{
+compiler = "g++";
 }
 }
 void refresh()
