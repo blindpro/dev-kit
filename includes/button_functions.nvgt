@@ -6,6 +6,10 @@ void commit()
 {
 speak(g.commit());
 }
+void create_repo()
+{
+speak(g.create_repo());
+}
 void load_home()
 {
 gui.load_screen("home");

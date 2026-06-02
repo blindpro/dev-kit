@@ -1,9 +1,14 @@
 class git
 {
+string create_repo()
+{
+return shell.send_wait("git init");
+}
 string get_status()
 {
 return shell.send_wait("git status");
 }
+
 string commit()
 {
 return shell.send_wait("git commit");

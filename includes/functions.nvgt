@@ -7,7 +7,7 @@ gui.clear_all_controls();
 gui.create_button("home",load_home);
 if(p.has_repo == false)
 {
-gui.create_button("create git rapozatory");
+gui.create_button("create git rapozatory",create_repo);
 }
 else
 {
