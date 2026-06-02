@@ -1,5 +1,6 @@
 class project
 {
+ini config;
 string name;
 string language;
 bool has_repo;
@@ -7,6 +8,30 @@ string compiler;
 project()
 {
 detect_repo();
+int num = build_config();
+if(num == 0)
+{
+config.load("project.ini");
+name = config.get_string("genral","name");
+language = config.get_string("genral","language");
+}
+}
+int build_config()
+{
+if(file_exists("project.ini"))
+{
+return 0;
+}
+file_put_contents("project.ini","");
+config.load("project.ini");
+config.create_section("genral");
+config.set_bool("genral","has repo",has_repo);
+name = input_box("enter name","Enter the name of your project");
+config.set_string("genral","name",name);
+language = input_box("enter language","Enter the programming language of the project.");
+config.set_string("genral","language",language);
+config.save("project.ini");
+return 1;
 }
 void refresh()
 {
@@ -23,5 +48,4 @@ else
 has_repo = false;
 }
 }
-
 }

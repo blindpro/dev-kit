@@ -1,3 +1,4 @@
+#include"ini.nvgt"
 #include"includes/*.nvgt"
 cmd shell;
 project p;
