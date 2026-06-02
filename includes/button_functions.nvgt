@@ -33,3 +33,12 @@ void load_git()
 gui.load_screen("git");
 speak("git management screen");
 }
+void load_project()
+{
+speak("project management screen");
+gui.load_screen("project");
+}
+void on_view_project_info()
+{
+info_box("project info","info for "+p.name,"project name: "+p.name+"\r\nproject language: "+p.language+"\r\nproject compiler: "+p.compiler);
+}

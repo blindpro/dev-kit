@@ -2,9 +2,12 @@ void setup()
 {
 build_home_screen();
 build_git_screen();
+build_project_screen();
 }
 void build_home_screen()
-{gui.create_button("git management",load_git);
+{
+gui.create_button("project management",load_project);
+gui.create_button("git management",load_git);
 gui.add_exit_button("exit");
 gui.create_screen("home");
 gui.clear_all_controls();
@@ -28,5 +31,13 @@ gui.create_button("push to remote",on_push);
 }
 gui.add_exit_button("exit");
 gui.create_screen("git");
+gui.clear_all_controls();
+}
+void build_project_screen()
+{
+gui.create_button("home",load_home);
+gui.create_button("view project info",on_view_project_info);
+gui.add_exit_button("exit");
+gui.create_screen("project");
 gui.clear_all_controls();
 }
