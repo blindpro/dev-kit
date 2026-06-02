@@ -1,16 +1,16 @@
-void speak_status()
+void on_check_status()
 {
 speak(g.get_status());
 }
-void commit()
+void on_commit()
 {
 speak(g.commit());
 }
-void create_repo()
+void on_create_repo()
 {
 speak(g.create_repo());
 }
-void stage_all()
+void on_stage_all()
 {
 g.stage_all();
 speak("all files staged");

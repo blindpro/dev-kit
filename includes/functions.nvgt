@@ -14,13 +14,13 @@ void build_git_screen()
 gui.create_button("home",load_home);
 if(p.has_repo == false)
 {
-gui.create_button("create git rapozatory",create_repo);
+gui.create_button("create git rapozatory",on_create_repo);
 }
 else
 {
-gui.create_button("check repo status",speak_status);
-gui.create_button("stage all files",stage_all);
-gui.create_button("commit to repo",commit);
+gui.create_button("check repo status",on_check_status);
+gui.create_button("stage all files",on_stage_all);
+gui.create_button("commit to repo",on_commit);
 }
 gui.add_exit_button("exit");
 gui.create_screen("git");
