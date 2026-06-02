@@ -15,5 +15,10 @@ if(name == "nvgt")
 build_command = "nvgt -c "+main_script;
 run_command = "nvgt "+main_script;
 }
+else if(name == "g++")
+{
+build_command = "g++ -o output "+main_script;
+run_command = "output.exe";
+}
 }
 }
