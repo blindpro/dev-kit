@@ -2,9 +2,10 @@ class project
 {
 ini config;
 string name;
+string main_script;
 string language;
 bool has_repo;
-string compiler;
+compiler c;
 project()
 {
 detect_repo();
@@ -14,6 +15,7 @@ if(num == 0)
 config.load("project.ini");
 name = config.get_string("genral","name");
 language = config.get_string("genral","language");
+main_script = config.get_string("genral","main script");
 }
 detect_compiler();
 }
@@ -29,6 +31,8 @@ config.create_section("genral");
 config.set_bool("genral","has repo",has_repo);
 name = input_box("enter name","Enter the name of your project");
 config.set_string("genral","name",name);
+main_script = input_box("enter main script","Enter the filename of the main script of your project");
+config.set_string("genral","main script",main_script);
 language = input_box("enter language","Enter the programming language of the project.");
 config.set_string("genral","language",language);
 config.save("project.ini");
@@ -39,11 +43,11 @@ void detect_compiler()
 language = language.lower();
 if(language == "nvgt")
 {
-compiler = "nvgt";
+c = compiler("nvgt",main_script);
 }
 else if(language == "c++" or language == "cpp")
 {
-compiler = "g++";
+c = compiler("g++",main_script);
 }
 }
 void refresh()

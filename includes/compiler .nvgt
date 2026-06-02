@@ -1,0 +1,19 @@
+class compiler
+{
+string name;
+string build_command;
+string run_command;
+compiler ()
+{
+name = "none";
+}
+compiler(string name, string main_script)
+{
+this.name = name;
+if(name == "nvgt")
+{
+build_command = "nvgt -c "+main_script;
+run_command = "nvgt "+main_script;
+}
+}
+}
