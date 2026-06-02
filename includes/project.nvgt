@@ -3,7 +3,6 @@ class project
 string name;
 string language;
 bool has_repo;
-bool has_git;
 string compiler;
 project()
 {

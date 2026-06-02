@@ -9,6 +9,8 @@ speak(g.commit());
 void on_create_repo()
 {
 speak(g.create_repo());
+p.refresh();
+build_git_screen();
 }
 void on_stage_all()
 {
