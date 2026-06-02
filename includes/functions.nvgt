@@ -12,6 +12,7 @@ gui.create_button("create git rapozatory",create_repo);
 else
 {
 gui.create_button("check repo status",speak_status);
+gui.create_button("stage all files",stage_all);
 gui.create_button("commit to repo",commit);
 }
 gui.add_exit_button("exit");

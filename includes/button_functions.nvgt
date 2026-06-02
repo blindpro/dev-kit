@@ -10,6 +10,11 @@ void create_repo()
 {
 speak(g.create_repo());
 }
+void stage_all()
+{
+g.stage_all();
+speak("all files staged");
+}
 void load_home()
 {
 gui.load_screen("home");

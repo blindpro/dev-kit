@@ -8,7 +8,10 @@ string get_status()
 {
 return shell.send_wait("git status");
 }
-
+void stage_all()
+{
+shell.send("git add .");
+}
 string commit()
 {
 return shell.send_wait("git commit");
