@@ -1,9 +1,16 @@
 void setup()
 {
-gui.create_button("git management",load_git);
+build_home_screen();
+build_git_screen();
+}
+void build_home_screen()
+{gui.create_button("git management",load_git);
 gui.add_exit_button("exit");
 gui.create_screen("home");
 gui.clear_all_controls();
+}
+void build_git_screen()
+{
 gui.create_button("home",load_home);
 if(p.has_repo == false)
 {
@@ -17,4 +24,5 @@ gui.create_button("commit to repo",commit);
 }
 gui.add_exit_button("exit");
 gui.create_screen("git");
+gui.clear_all_controls();
 }
