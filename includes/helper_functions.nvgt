@@ -1,9 +1,8 @@
-class helper_functions
+namespace helpers
 {
-private void close()
+void close()
 {
 speak("exiting");
 exit();
 }
-
 }
