@@ -63,6 +63,7 @@ void build_history_screen()
 {
 gui.create_button("home",load_home);
 gui.create_list("history");
+gui.create_button("copy commit hash",on_get_commit_hash);
 gui.add_exit_button("exit");
 gui.create_screen("history");
 gui.clear_all_controls();

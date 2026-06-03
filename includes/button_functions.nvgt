@@ -62,6 +62,16 @@ else
 speak("branch deletion canseld.");
 }
 }
+void on_get_commit_hash()
+{
+string[] history = g.get_history();
+int pos = gui.get_list_pazition("history");
+string commit = history[pos];
+string[] data = commit.split(" ");
+string hash = data[0];
+clipboard_set_text(hash);
+speak("commit hash copied to clipboard.");
+}
 void load_home()
 {
 gui.load_screen("home");
