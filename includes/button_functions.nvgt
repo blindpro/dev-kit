@@ -127,6 +127,11 @@ speak("home screen");
 }
 void load_git()
 {
+if(!p.git_installed)
+{
+speak("functions disabled because git is not installed");
+return;
+}
 gui.load_screen("git");
 speak("git management screen");
 }

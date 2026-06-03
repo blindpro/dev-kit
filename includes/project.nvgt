@@ -4,6 +4,7 @@ ini config;
 string name;
 string main_script;
 string language;
+bool git_installed;
 bool has_repo;
 compiler c;
 project()

@@ -1,5 +1,17 @@
 class git
 {
+bool has_git()
+{
+string output = shell.send_wait("git vversion");
+if(output.find("not recognized") !=-1)
+{
+return false;
+}
+else
+{
+return true;
+}
+}
 string create_repo()
 {
 return shell.send_wait("git init");

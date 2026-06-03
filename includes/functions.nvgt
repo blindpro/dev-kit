@@ -1,5 +1,10 @@
 void setup()
 {
+p.git_installed = g.has_git();
+if(!p.git_installed)
+{
+dlg("Please note! Git is not found on your system, so git management functions will be disabled");
+}
 build_home_screen();
 build_git_screen();
 build_project_screen();
