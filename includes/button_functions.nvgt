@@ -77,8 +77,17 @@ void on_merge_branch()
 string[] branches = g.get_branches();
 string branch = branches[gui.get_list_pazition("branches")];
 branch = branch.replace("*","");
+string confirm = input_box("Merge branch","Are you sure you want to merge branch "+branch+"? Type merge to confirm");
+if(confirm == "merge")
+{
 speak("merging branch "+branch+"...");
 speak(g.merge_branch(branch));
+
+}
+else
+{
+speak("merge canseld");
+}
 }
 void on_delete_branch()
 {
