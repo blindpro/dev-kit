@@ -5,6 +5,7 @@ build_git_screen();
 build_project_screen();
 build_branch_screen();
 build_history_screen();
+build_remote_screen();
 }
 void build_home_screen()
 {
@@ -30,6 +31,7 @@ if(g.has_remotes())
 {
 gui.create_button("push to remote",on_push);
 }
+gui.create_button("manage remotes",load_remotes);
 gui.create_button("view history",load_history);
 gui.create_button("manage branches",load_branch);
 }
@@ -67,4 +69,14 @@ gui.create_button("copy commit hash",on_get_commit_hash);
 gui.add_exit_button("exit");
 gui.create_screen("history");
 gui.clear_all_controls();
+}
+void build_remote_screen()
+{
+gui.create_button("home",load_home);
+gui.create_list("remotes");
+gui.create_button("view remote url",on_view_remote_url);
+gui.create_button("add remote",on_add_remote);
+gui.create_button("delete remote",on_delete_remote);
+gui.add_exit_button("exit");
+gui.create_screen("remote management");
 }

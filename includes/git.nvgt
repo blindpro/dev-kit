@@ -21,6 +21,23 @@ bool has_remotes()
 string remotes = shell.send_wait("git remote");
 return remotes != "";
 }
+string[] get_remotes()
+{
+string remotes = shell.send_wait("git remote");
+return remotes.split("\n");
+}
+string add_remote(string name, string url)
+{
+return shell.send_wait("git remote add "+name+" "+url);
+}
+string delete_remote(string name)
+{
+return shell.send_wait("git remote remove "+name);
+}
+string get_remote_url(string name)
+{
+return shell.send_wait("git remote get-url "+name);
+}
 string push()
 {
 return shell.send_wait("git push");
@@ -51,5 +68,4 @@ string[] get_history()
 string history = shell.send_wait("git log --oneline");
 return history.split("\n");
 }
-
 }

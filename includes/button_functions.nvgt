@@ -22,6 +22,27 @@ void on_push()
 speak("pushing to remote...");
 speak(g.push());
 }
+void on_view_remote_url()
+{
+string[] remotes = g.get_remotes();
+int pos = gui.get_list_pazition("remotes");
+speak(g.get_remote_url(remotes[pos]));
+}
+void on_add_remote()
+{
+string name = input_box("add remote","Enter remote name");
+string url = input_box("add remote","Enter remote url");
+speak("adding remote "+name+"...");
+speak(g.add_remote(name,url));
+}
+void on_delete_remote()
+{
+string[] remotes = g.get_remotes();
+int pos = gui.get_list_pazition("remotes");
+speak(g.delete_remote(remotes[pos]));
+speak("remote "+remotes[pos]+"deleted.");
+load_remotes();
+}
 void on_create_branch()
 {
 string branch = input_box("create branch","Enter branch name");
@@ -102,6 +123,17 @@ string[] history = g.get_history();
 for(int i = 0; i<history.length(); i++)
 {
 gui.add_list_item("history",history[i]);
+}
+}
+void load_remotes()
+{
+speak("remote management screen");
+gui.load_screen("remote management");
+gui.clear_list("remotes");
+string[] remotes = g.get_remotes();
+for(int i = 0; i<remotes.length(); i++)
+{
+gui.add_list_item("remotes",remotes[i]);
 }
 }
 void load_project()
