@@ -55,6 +55,7 @@ void on_switch_branch()
 string[] branches = g.get_branches();
 int pos = gui.get_list_pazition("branches");
 string branch = branches[pos];
+branch = branch.replace("*","");
 speak("switching to branch "+branch+"...");
 speak(g.switch_branch(branch));
 load_branch();
@@ -63,6 +64,7 @@ void on_merge_branch()
 {
 string[] branches = g.get_branches();
 string branch = branch[gui.get_list_pazition("branches")];
+branch = branch.replace("*","");
 speak("merging branch "+branch+"...");
 speak(g.merge_branch(branch));
 }
