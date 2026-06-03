@@ -34,6 +34,7 @@ string name = input_box("add remote","Enter remote name");
 string url = input_box("add remote","Enter remote url");
 speak("adding remote "+name+"...");
 speak(g.add_remote(name,url));
+load_remotes();
 }
 void on_delete_remote()
 {
