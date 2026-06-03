@@ -4,6 +4,7 @@ build_home_screen();
 build_git_screen();
 build_project_screen();
 build_branch_screen();
+build_history_screen();
 }
 void build_home_screen()
 {
@@ -29,6 +30,7 @@ if(g.has_remotes())
 {
 gui.create_button("push to remote",on_push);
 }
+gui.create_button("view history",load_history);
 gui.create_button("manage branches",load_branch);
 }
 gui.add_exit_button("exit");
@@ -55,5 +57,13 @@ gui.create_button("merge branch",on_merge_branch);
 gui.create_button("delete branch",on_delete_branch);
 gui.add_exit_button("exit");
 gui.create_screen("branch management");
+gui.clear_all_controls();
+}
+void build_history_screen()
+{
+gui.create_button("home",load_home);
+gui.create_list("history");
+gui.add_exit_button("exit");
+gui.create_screen("history");
 gui.clear_all_controls();
 }

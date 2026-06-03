@@ -83,6 +83,17 @@ for(int i = 0; i<branches.length(); i++)
 gui.add_list_item("branches",branches[i]);
 }
 }
+void load_history()
+{
+speak("history screen");
+gui.load_screen("history");
+gui.clear_list("history");
+string[] history = g.get_history();
+for(int i = 0; i<history.length(); i++)
+{
+gui.add_list_item("history",history[i]);
+}
+}
 void load_project()
 {
 speak("project management screen");

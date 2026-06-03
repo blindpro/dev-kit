@@ -46,4 +46,10 @@ string delete_branch(string branch)
 {
 return shell.send_wait("git branch -D "+branch);
 }
+string[] get_history()
+{
+string history = shell.send_wait("git log --oneline");
+return history.split("\n");
+}
+
 }
