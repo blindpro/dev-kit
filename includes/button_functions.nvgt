@@ -74,6 +74,7 @@ void on_delete_branch()
 string[] branches = g.get_branches();
 int pos = gui.get_list_pazition("branches");
 string branch = branches[pos];
+branch = branch.replace("*","");
 string confirm = input_box("delete branch","Are you sure you want to delete branch "+branch+"? This action can not be undone! Type the branch name to confirm.");
 if(confirm == branch)
 {
