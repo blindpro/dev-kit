@@ -30,6 +30,10 @@ string[] get_branches()
 string branches = shell.send_wait("git branch");
 return branches.split("\n");
 }
+string create_branch(string branch)
+{
+return shell.send_wait("git branch "+branch);
+}
 string switch_branch(string branch)
 {
 return shell.send_wait("git switch "+branch);
