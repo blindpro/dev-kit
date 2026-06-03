@@ -68,6 +68,7 @@ string[] branches = g.get_branches();
 int pos = gui.get_list_pazition("branches");
 string branch = branches[pos];
 branch = branch.replace("*","");
+branch = branch.trim_whitespace();
 speak("switching to branch "+branch+"...");
 speak(g.switch_branch(branch));
 load_branch();
@@ -77,6 +78,7 @@ void on_merge_branch()
 string[] branches = g.get_branches();
 string branch = branches[gui.get_list_pazition("branches")];
 branch = branch.replace("*","");
+branch = branch.trim_whitespace();
 string confirm = input_box("Merge branch","Are you sure you want to merge branch "+branch+"? Type merge to confirm");
 if(confirm == "merge")
 {
@@ -95,6 +97,7 @@ string[] branches = g.get_branches();
 int pos = gui.get_list_pazition("branches");
 string branch = branches[pos];
 branch = branch.replace("*","");
+branch = branch.trim_whitespace();
 string confirm = input_box("delete branch","Are you sure you want to delete branch "+branch+"? This action can not be undone! Type the branch name to confirm.");
 if(confirm == branch)
 {
