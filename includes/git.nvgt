@@ -42,4 +42,8 @@ string merge_branch(string branch)
 {
 return shell.send_wait("git merge "+branch);
 }
+string delete_branch(string branch)
+{
+return shell.send_wait("git branch -D "+branch);
+}
 }

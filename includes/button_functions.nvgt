@@ -45,7 +45,23 @@ string branch = branch[gui.get_list_pazition("branches")];
 speak("merging branch "+branch+"...");
 speak(g.merge_branch(branch));
 }
-
+void on_delete_branch()
+{
+string[] branches = g.get_branches();
+int pos = gui.get_list_pazition("branches");
+string branch = branches[pos];
+string confirm = input_box("delete branch","Are you sure you want to delete branch "+branch+"? This action can not be undone! Type the branch name to confirm.");
+if(confirm == branch)
+{
+speak("deleting branch "+branch+"...");
+speak(g.delete_branch(branch));
+load_branch();
+}
+else
+{
+speak("branch deletion canseld.");
+}
+}
 void load_home()
 {
 gui.load_screen("home");
