@@ -12,10 +12,37 @@ void on_commit()
 {
 speak(g.commit());
 }
+void on_stage()
+{
+string path = input_box("stage file","Please enter the file you want to stage.");
+string output = g.stage(path);
+if(output == "blank")
+{
+speak("file staged");
+return;
+}
+speak(output);
+}
+
 void on_stage_all()
 {
 g.stage_all();
 speak("all files staged");
+}
+void on_unstage()
+{
+string path = input_box("unstage file","Please enter the file you want to unstage.");
+string output = g.unstage(path);
+if(output == "blank")
+{
+speak("file staged");
+return;
+}
+speak(output);
+}
+void on_unstage_all()
+{
+speak(g.unstage_all());
 }
 void on_push()
 {

@@ -20,6 +20,18 @@ string get_status()
 {
 return shell.send_wait("git status");
 }
+string stage(string file)
+{
+return shell.send_wait("git add "+file);
+}
+string unstage(string file)
+{
+return shell.send_wait("git restore --staged "+file);
+}
+string unstage_all()
+{
+return shell.send_wait("git restore --staged -- .");
+}
 string stage_all()
 {
 return shell.send_wait("git add .");
