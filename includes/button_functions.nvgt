@@ -23,7 +23,6 @@ return;
 }
 speak(output);
 }
-
 void on_stage_all()
 {
 g.stage_all();
@@ -61,7 +60,6 @@ string name = input_box("add remote","Enter remote name");
 string url = input_box("add remote","Enter remote url");
 speak("adding remote "+name+"...");
 speak(g.add_remote(name,url));
-build_git_screen();
 load_remotes();
 }
 void on_delete_remote()
@@ -73,9 +71,7 @@ if(confirm == remotes[pos])
 {
 speak(g.delete_remote(remotes[pos]));
 speak("remote "+remotes[pos]+"deleted.");
-build_git_screen();
 load_remotes();
-
 }
 else
 {
