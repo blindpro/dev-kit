@@ -50,6 +50,10 @@ else if(language == "c++" or language == "cpp")
 {
 c = compiler("g++",main_script);
 }
+else if(language == "hugo")
+{
+c = compiler("hugo",main_script);
+}
 }
 void refresh()
 {

@@ -20,6 +20,11 @@ else if(name == "g++")
 build_command = "g++ -o output "+main_script;
 run_command = "output.exe";
 }
+else if(name == "hugo")
+{
+build_command = "hugo";
+run_command = "";
+}
 }
 string build()
 {

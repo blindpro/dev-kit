@@ -211,6 +211,10 @@ speak(p.c.build());
 }
 void on_run()
 {
+if(p.c.run_command == "")
+{
+speak("No run command for current compiler");
+}
 speak("running project...");
 speak(p.c.run());
 }
