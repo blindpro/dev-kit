@@ -2,6 +2,7 @@
 *.ogg
 *.vscode/
 *.ini
+*.dll
 *.dat
 *.pk
 pack_creator.nvgt
