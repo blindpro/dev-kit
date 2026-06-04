@@ -23,7 +23,7 @@ gui.clear_all_controls();
 void build_git_screen()
 {
 gui.create_button("home",load_home);
-if(p.has_repo == false)
+if(!p.has_repo)
 {
 gui.create_button("create git rapozatory",on_create_repo);
 }
