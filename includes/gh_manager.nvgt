@@ -1,0 +1,17 @@
+class gh_manager
+{
+bool has_gh;
+gh_manager()
+{
+has_gh = detect_gh();
+}
+bool detect_gh()
+{
+string output = shell.send_wait("gh version");
+if(output.find("not recognized")!=-1)
+{
+return false;
+}
+return true;
+}
+}
