@@ -2,7 +2,6 @@ void on_create_repo()
 {
 speak(g.create_repo());
 p.refresh();
-build_git_screen();
 }
 void on_check_status()
 {

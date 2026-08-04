@@ -1,5 +1,6 @@
 *.exe
 *.ogg
+*.zip
 *.vscode/
 *.ini
 *.dll
@@ -9,3 +10,4 @@ pack_creator.nvgt
 Makefile
 task_builder.exe
 *sounds/
+*.bat
