@@ -70,7 +70,6 @@ if(confirm == remotes[pos])
 {
 speak(g.delete_remote(remotes[pos]));
 speak("remote "+remotes[pos]+"deleted.");
-load_remotes();
 }
 else
 {
@@ -188,6 +187,13 @@ string[] remotes = g.get_remotes();
 for(int i = 0; i<remotes.length(); i++)
 {
 gui.add_list_item("remotes",remotes[i]);
+}
+}
+void load_gh()
+{
+if(gh.show_gh)
+{
+gui.load_screen("github management");
 }
 }
 void load_project()

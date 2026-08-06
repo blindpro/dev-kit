@@ -4,6 +4,7 @@ cmd shell;
 project p;
 window_gui gui;
 git g;
+gh_manager gh;
 void main()
 {
 gui.setup_window("dev kit");

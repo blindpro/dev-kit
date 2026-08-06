@@ -20,9 +20,13 @@ bool detect_gh()
 string output = shell.send_wait("gh version");
 if(output.find("not recognized")!=-1)
 {
-return false;
-}
 return true;
 }
-
+return false;
+}
+string[] get_issues()
+{
+string output = shell.send_wait("gh issue list");
+return output.split("\n");
+}
 }

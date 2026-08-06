@@ -8,6 +8,7 @@ dlg("Please note! Git is not found on your system, so git management functions w
 build_home_screen();
 build_git_screen();
 build_project_screen();
+build_gh_screen();
 build_branch_screen();
 build_history_screen();
 build_remote_screen();
@@ -16,6 +17,7 @@ void build_home_screen()
 {
 gui.create_button("project management",load_project);
 gui.create_button("git management",load_git);
+gui.create_button("github management",load_gh);
 gui.add_exit_button("exit");
 gui.create_screen("home");
 gui.clear_all_controls();
@@ -87,4 +89,17 @@ gui.create_button("add remote",on_add_remote);
 gui.create_button("delete remote",on_delete_remote);
 gui.add_exit_button("exit");
 gui.create_screen("remote management");
+gui.clear_all_controls();
+}
+void build_gh_screen()
+{
+gui.create_button("home",load_home);
+gui.create_list("issues");
+string[] issues = gh.get_issues();
+for(int i = 0; i<issues.length(); i++)
+{
+gui.add_list_item("issues",issues[i]);
+}
+gui.create_screen("gh");
+gui.clear_all_controls();
 }
