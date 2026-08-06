@@ -1,9 +1,19 @@
 class gh_manager
 {
+bool show_gh;
 bool has_gh;
 gh_manager()
 {
 has_gh = detect_gh();
+bool remotes = g.has_remotes();
+if(has_gh and remotes)
+{
+show_gh = true;
+}
+else
+{
+show_gh = false;
+}
 }
 bool detect_gh()
 {
@@ -14,4 +24,5 @@ return false;
 }
 return true;
 }
+
 }
